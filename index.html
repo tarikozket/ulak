@@ -7,6 +7,9 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://raw.github.com/tarikozket/ulak/master/ulak.css" media="print" />
+    <script type="text/javascript" src="https://raw.github.com/tarikozket/ulak/master/ulak.js"></script>
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -43,22 +46,22 @@
 
 <h3>demos</h3>
 
-<p><strong>Click for "error"</strong></p>
+<p><strong onClick='ulak({"text":"an error occured","type":"error","timeout":2000});'>Click for "error"</strong></p>
 
 <pre><code>ulak({"text":"an error occured","type":"error","timeout":2000});
 </code></pre>
 
-<p>*<strong><em>Click for "success"</em></strong>*</p>
+<p>*<strong onClick='ulak({"text":"success","type":"success","timeout":2000});'>><em>Click for "success"</em></strong>*</p>
 
 <pre><code>ulak({"text":"success","type":"success","timeout":2000});
 </code></pre>
 
-<p><strong>Click for "warning"</strong></p>
+<p><strong onClick='ulak({"text":"what are you doing? be careful...","type":"warning","timeout":2000});'>Click for "warning"</strong></p>
 
 <pre><code>ulak({"text":"what are you doing? be careful...","type":"warning","timeout":2000});
 </code></pre>
 
-<p><strong>Click for "info"</strong></p>
+<p><strong onClick='ulak({"text":"what information you will give to people?","type":"info","timeout":2000});'>Click for "info"</strong></p>
 
 <pre><code>ulak({"text":"what information you'll give to people?","type":"info","timeout":2000});
 </code></pre>
