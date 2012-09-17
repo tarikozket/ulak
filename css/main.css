@@ -1,0 +1,31 @@
+body{margin:0;padding:0;font-family:sans-serif;background:#FDFDFD;}
+#container{width:700px;margin:0 auto;}
+#lead{width:700px;float:left;margin-top:75px;}
+#github{padding:10px;float:right;font-size:12px;background:#f5f5f5;margin-right:2px;color:#999;cursor:pointer;}
+#github:hover{background:#CCC;color:#FFF;}
+#download,#twitter{float:right;font-size:12px;background:#7fd1f7;padding:10px;color:#FFF;cursor:pointer;}
+#twitter{float:left;}
+#download:hover,#twitter:hover{background:#00a5f0;}
+#ulak{width:250px;text-align:left;float:left;margin-top:80px;font-size:60px;margin-left:15px;color:#7fd1f7;font-weight:bolder;}
+#ulakIcon{width:160px;float:left;background:#F9F9F9;border-radius:10px;border:1px solid #F1F1F1;}
+#ulakIcon img{padding:15px;}
+#ulakDesc{width:700px;float:left;text-align:left;font-size:12px;color:#999;font-weight:normal;}
+.demo{width:auto;float:left;height:15px;margin-right:15px;font-size:12px;padding:10px 40px;cursor:pointer;}
+.error{background:#f54349;border-bottom:2px solid #d5151b;color:#FFFFFF;}
+.success{background:#daec8f;border-bottom:2px solid #a3bf26;color:#7c9800;}
+.warning{background:#fff000;border-bottom:2px solid #cfc300;color:#ac7a00;}
+.info{background:#d9edf7;border-bottom:2px solid #153979;color:#3a87ad;}
+.error:hover{background:#d5151b;border-bottom:2px solid #f54349;color:#f54349;}
+.success:hover{background:#a3bf26;border-bottom:2px solid #daec8f;color:#daec8f;}
+.warning:hover{background:#cfc300;border-bottom:2px solid #fff000;color:#fff000;}
+.info:hover{background:#153979;border-bottom:2px solid #d9edf7;color:#d9edf7;}
+h1{color:#EEE;}
+pre{margin:0;background:#EEE;padding:10px;line-height:1.5em;}
+#compatibility,#modalintegrated{width:350px;float:left;margin-top:50px;}
+#compatibility li{font-size:14px;color:#444;line-height:1.75em;}
+#demoscodes p{font-size:12px;font-weight:bold;text-indent:15px;}
+#demoscodes pre{margin-left:40px;}
+#modalintegrated p{line-height:1.75em;font-size:14px;}
+#footer{width:700px;float:left;margin-top:50px;border-top:1px dotted #f1f1f1;margin-bottom:25px;}
+#whatdoesulakmeans p{font-size:14px;text-indent:30px;}
+#demos,#options,#demoscodes,#whatdoesulakmeans{width:700px;float:left;margin-top:50px;}
