@@ -1,7 +1,7 @@
 ulak 
 ====
 
-a notification bar plugin for jquery
+a simple lightweight notification bar plugin for jquery
 ====
 
-for more information : http://tarikozket.github.com/ulak/
+for demos and more information : http://tarikozket.github.com/ulak/
