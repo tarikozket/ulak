@@ -1,3 +1,64 @@
-$(function(){ulak=function(a){ulakClose=function(){clearTimeout(b);$("#ulak-container").slideToggle("slow",function(){$(this).remove()});$("#ulak-modal").fadeOut("slow",function(){$(this).remove()})};ulakClose();!0!=a.modal?$("body").prepend("<div id='ulak-container'><div id='ulak-message-container'>"+a.text+"</div></div>"):$("body").prepend("<div id='ulak-container'><div id='ulak-message-container'>"+a.text+"</div></div><div id='ulak-modal'></div>");switch(a.type){case "error":$("#ulak-container").addClass("ulak-error");
-break;case "success":$("#ulak-container").addClass("ulak-success");break;case "warning":$("#ulak-container").addClass("ulak-warning");break;case "info":$("#ulak-container").addClass("ulak-info");break;default:$("#ulak-container").addClass("ulak-error")}$("#ulak-container").slideToggle("slow");$("#ulak-modal").fadeIn("slow");a.closeWith||($("#ulak-container").mouseenter(function(){ulakClose()}),$("#ulak-container, #ulak-modal").click(function(){ulakClose()}));var b=a.timeout?setTimeout("ulakClose()",
-a.timeout):setTimeout("ulakClose()",3E3)}});
+$(function() {
+  
+	var ulakTimeout;
+	
+	ulak = function(options) {
+		
+		if($("#ulak-container").length) {
+			ulak.close();
+		}
+		
+		if(options.modal!==true) {
+			$("body").prepend("<div id='ulak-container'><div id='ulak-message-container'>"+options.text+"</div></div>");
+		} else {
+			$("body").prepend("<div id='ulak-container'><div id='ulak-message-container'>"+options.text+"</div></div><div id='ulak-modal'></div>");
+		}
+		
+		switch(options.type) {
+			case "error":
+				$("#ulak-container").addClass("ulak-error");
+				break;
+			case "success":
+				$("#ulak-container").addClass("ulak-success");
+				break;
+			case "warning":
+				$("#ulak-container").addClass("ulak-warning");
+				break;
+			case "info":
+				$("#ulak-container").addClass("ulak-info");
+				break;
+			default:
+				$("#ulak-container").addClass("ulak-error");
+		}
+		
+		$("#ulak-container").slideToggle("slow");
+		$("#ulak-modal").fadeIn("slow");
+		
+		if(!options.closeWith) {
+			$("#ulak-container").mouseenter(function() {
+				ulak.close();
+			});
+			$("#ulak-container, #ulak-modal").click(function() {
+				ulak.close();
+			}); 
+		}	
+
+		if(options.timeout) {
+			ulakTimeout = setTimeout("ulak.close()",options.timeout);
+		} else {
+			ulakTimeout = setTimeout("ulak.close()",3000);
+		}
+
+	}
+
+	ulak.close = function() {
+		clearTimeout(ulakTimeout);
+		$("#ulak-container:first").slideToggle("slow", function() {
+			$(this).remove();
+		});
+		$("#ulak-modal:first").fadeOut("slow", function() {
+			$(this).remove();
+		});
+	}
+	
+});
