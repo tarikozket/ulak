@@ -8,11 +8,7 @@ $(function() {
 			ulak.close();
 		}
 		
-		if(options.modal!==true) {
-			$("body").prepend("<div id='ulak-container'><div id='ulak-message-container'>"+options.text+"</div></div>");
-		} else {
-			$("body").prepend("<div id='ulak-container'><div id='ulak-message-container'>"+options.text+"</div></div><div id='ulak-modal'></div>");
-		}
+		$("body").prepend("<div id='ulak-container'><div id='ulak-center'><div id='ulak-message-container'>"+options.text+"</div><div id='ulak-button-container'></div></div></div><div id='ulak-modal'></div>");
 		
 		switch(options.type) {
 			case "error":
@@ -31,20 +27,43 @@ $(function() {
 				$("#ulak-container").addClass("ulak-error");
 		}
 		
-		$("#ulak-container").slideToggle("slow");
-		$("#ulak-modal").fadeIn("slow");
-		
-		if(!options.closeWith) {
-			$("#ulak-container").mouseenter(function() {
-				ulak.close();
+		if(options.buttons) {
+			$.each(options.buttons, function(buttonID) {
+				var button = $(this);
+				var buttonCallback = button[0].callback;
+				var buttonText = button[0].text;
+				var buttonID = "ulak-button"+buttonID;
+				var buttonClass = button[0].class;
+				$('#ulak-button-container').append("<div id='"+buttonID+"' class='ulak-button'>"+buttonText+"</div>");
+				if(buttonClass) {
+					$("#"+buttonID).addClass(buttonClass);
+				}
+				$("#"+buttonID).click(function() {
+					buttonCallback();
+					ulak.close();
+				});
 			});
+		}
+		
+		$("#ulak-container").slideToggle("slow");
+		
+		if(options.modal) {
+			$("#ulak-modal").fadeIn("slow");
+		}
+		
+		if(!options.buttons) {
+				$("#ulak-container").mouseenter(function() {
+					ulak.close();
+				});
 			$("#ulak-container, #ulak-modal").click(function() {
 				ulak.close();
 			}); 
 		}	
-
-		if(options.timeout) {
-			ulakTimeout = setTimeout("ulak.close()",options.timeout);
+		
+		if(options.timeout || options.timeout===false) {
+			if(options.timeout!==false) {
+				ulakTimeout = setTimeout("ulak.close()",options.timeout);
+			}
 		} else {
 			ulakTimeout = setTimeout("ulak.close()",3000);
 		}
