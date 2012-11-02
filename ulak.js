@@ -33,7 +33,7 @@ $(function() {
 				var buttonCallback = button[0].callback;
 				var buttonText = button[0].text;
 				var buttonID = "ulak-button"+buttonID;
-				var buttonClass = button[0].class;
+				var buttonClass = button[0].className;
 				$('#ulak-button-container').append("<div id='"+buttonID+"' class='ulak-button'>"+buttonText+"</div>");
 				if(buttonClass) {
 					$("#"+buttonID).addClass(buttonClass);
