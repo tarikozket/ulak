@@ -29,7 +29,7 @@ $(function() {
 		
 		if(options.buttons) {
 			$.each(options.buttons, function(buttonID) {
-				var button = $(this);
+				var button = options.buttons[buttonID];
 				var buttonCallback = button[0].callback;
 				var buttonText = button[0].text;
 				var buttonID = "ulak-button"+buttonID;
