@@ -2,7 +2,6 @@ Ulak jQuery Notification Plugin
 ====
 
 A simple and lightweight notification bar plugin for jQuery.
-====
 
 Demos and more information: http://tarikozket.github.com/ulak/
 
